@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.logo {
+    animation: flicker 2s infinite;
+    width: 20rem; /* adjust as needed */
+    height: 20rem; /* adjust as needed */
+}
+
+.center-text {
+    text-align: center;
+    width: 100%;
+}
