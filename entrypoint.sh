@@ -6,6 +6,9 @@
 ./wiremock.sh
 ./wait-for.sh localhost:8080 -t 60 -- echo "🚀 Wiremock is up"
 
+# check node version
+node -v
+
 # Start nginx
 echo "🚀 Starting nginx"
 nginx -t
