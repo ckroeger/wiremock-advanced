@@ -26,12 +26,16 @@ COPY wiremock/__files /home/wiremock/__files
 COPY wiremock/mappings /home/wiremock/mappings
 COPY wiremock/wiremock.sh /home/wiremock/wiremock.sh
 
+# Copy newman
+COPY newman /home/newman
+RUN cd /home/newman && npm install
+
 # Make the scripts executable
-RUN chmod +x /log-script.sh /entrypoint.sh /wiremock.sh /home/wiremock/wiremock.sh
-RUN dos2unix /log-script.sh /entrypoint.sh /wiremock.sh /home/wiremock/wiremock.sh
+RUN chmod +x /log-script.sh /entrypoint.sh /wiremock.sh /home/wiremock/wiremock.sh /home/newman/newman-endpoint.sh
+RUN dos2unix /log-script.sh /entrypoint.sh /wiremock.sh /home/wiremock/wiremock.sh /home/newman/newman-endpoint.sh
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 80 4000
 
 # Start the entrypoint script when the container launches
 ENTRYPOINT ["/entrypoint.sh"]

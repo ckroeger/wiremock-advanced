@@ -9,6 +9,11 @@
 # check node version
 node -v
 
+# Start the wiremock server
+ls /home/newman
+/home/newman/newman-endpoint.sh
+./wait-for.sh localhost:3000 -t 60 -- echo "🚀 Newman-Endpoint is up"
+
 # Start nginx
 echo "🚀 Starting nginx"
 nginx -t
