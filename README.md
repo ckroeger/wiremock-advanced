@@ -5,6 +5,26 @@ A example Image for extending a wiremock, with static content, controlled by ngi
 [![nginx](static/img/nginx-logo.png)](https://www.nginx.com/)
 ![docker](static/img/docker.png)
 
+- [wiremock-advanced](#wiremock-advanced)
+  - [TODOS](#todos)
+  - [How to create the image](#how-to-create-the-image)
+  - [How to run the container](#how-to-run-the-container)
+  - [Execute Newman](#execute-newman)
+  - [Test container](#test-container)
+    - [Show index.html of static content](#show-indexhtml-of-static-content)
+    - [Show wiremock mappings](#show-wiremock-mappings)
+    - [Mocked Data](#mocked-data)
+- [Git Setup](#git-setup)
+- [Nice to know](#nice-to-know)
+  - [Start official wiremock container](#start-official-wiremock-container)
+  - [Nginx commands](#nginx-commands)
+
+## TODOS
+  * ✅ add newman
+  * add enpoint that returns all postman-collection names
+  * add enpoint that takes name of the postman-collection to execute
+
+
 ## How to create the image
 Example:
 ```bash
@@ -14,8 +34,11 @@ docker build -t wm-adv:v1 .
 ## How to run the container
 Example:
 ```bash
-docker run -p 8090:80 wm-adv:v1
+docker run -p 8090:80 -p 3000:3000 -p 4000:4000 wm-adv:v1
 ```
+
+## Execute Newman
+* http://localhost:8090/newman/nm
 
 ## Test container
 
@@ -29,6 +52,8 @@ or http://localhost:8090/
 ```shell
 curl http://localhost:8090/api/__admin/mappings
 ```
+or http://localhost:8090/api/__admin/mappings
+
 
 ### Mocked Data
 * http://localhost:8090/api/v1/getWeather?city=Halifax

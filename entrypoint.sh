@@ -7,10 +7,9 @@
 ./wait-for.sh localhost:8080 -t 60 -- echo "🚀 Wiremock is up"
 
 # check node version
-node -v
+#node -v
 
-# Start the wiremock server
-ls /home/newman
+# Start newman
 /home/newman/newman-endpoint.sh
 ./wait-for.sh localhost:3000 -t 60 -- echo "🚀 Newman-Endpoint is up"
 

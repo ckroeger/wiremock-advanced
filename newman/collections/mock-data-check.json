@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "D20d771d-70ab-452f-9edd-0904dbc315b8",
+		"name": "Test wiremock mappings",
+		"description": "Test wiremock mappings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Getting started with tests",
+			"item": [
+				{
+					"name": "Getting started with tests",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"",
+                                    "pm.test(\"The response has all properties\", () => {\r",
+									"    //parse the response json and test three properties\r",
+									"    const responseJson = pm.response.json();\r",
+									"    //pm.expect(responseJson.form.type).to.eql('vip');\r",
+									"    //pm.expect(responseJson.form.name).to.be.a('string');\r",
+									"    //pm.expect(responseJson.form.id).to.have.lengthOf(1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/geocode/v1/json?q=Halifax",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api/geocode/v1/json?q=Halifax"
+							]
+						},
+						"description": "Test wiremock mappings"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "mockBaseUrl",
+			"value": "https://533c269c.ngrok.io"
+		}
+	]
+}
