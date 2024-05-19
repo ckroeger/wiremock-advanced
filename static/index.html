@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Awesome Website</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+        .centered-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .centered-list > li {
+            display: block;
+            margin: 10px auto;
+        }
+        .centered-list li a {
+            text-decoration: none;
+            color: #000;
+            text-align: center;
+            display: block;
+        }
+        .centered-list ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
-    <img class="logo" src="./img/swan.png" alt="Swan Logo">
-    <h1 class="center-text">This is static content served by nginx.</h1>
+<img class="logo" src="./img/swan.png" alt="Swan Logo">
+<h1 class="center-text">This is static content served by nginx.</h1>
+<ul class="centered-list">
+    <li><h3>Static content via webserver</h3>
+        <ul>
+            <li><a href="/index.html">reload this side</a></li>
+        </ul>
+    </li>
+    <li><h3>Data from Mockserver</h3>
+        <ul>
+            <li><a href="http://localhost:8090/ws.html" target="_blank">Websocket</a></li>
+            <li><a href="http://localhost:8090/api/v1/getWeather?city=Halifax" target="_blank">api/v1/getWeather?city=Halifax</a></li>
+            <li><a href="http://localhost:8090/api/geocode/v1/json?q=Halifax" target="_blank">/api/geocode/v1/json?q=Halifax</a></li>
+            <li><a href="http://localhost:8090/api/forecast/apikey123/44.648618,-63.5859487?units=uk2" target="_blank">/api/forecast/apikey123/44.648618,-63.5859487?units=uk2</a></li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>

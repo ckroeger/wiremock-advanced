@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Websocket test</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: row;
+        }
+        form > * {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<form id="connectForm">
+    <div id="connect-state">❌</div><input type="text" id="urlInput" placeholder="Enter WebSocket URL">
+    <button type="submit">Connect</button>
+</form>
+<form id="messageForm">
+    <div>👉</div><input type="text" id="messageInput" placeholder="Type a message">
+    <button type="submit">Send</button>
+</form>
+<textarea id="responseOutput" rows="10" cols="120"></textarea>
+<script>
+    var ws;
+    // connect("ws://localhost:4000/ws");
+
+    window.connect = (url) => {
+        return new Promise((resolve, reject) => {
+            ws = new WebSocket(url);
+
+            ws.onopen = function () {
+                console.log("Connected");
+                ws.send("Hello, Server");
+                resolve(true);
+            };
+
+            ws.onerror = function (error) {
+                console.error("WebSocket error: ", error);
+                reject(false);
+            };
+
+            ws.onmessage = function (evt) {
+                console.log(evt.data);
+                var responseOutput = document.getElementById('responseOutput');
+                responseOutput.value = evt.data + '\n' + responseOutput.value;
+            };
+        });
+    };
+
+
+    window.send = function (msg) {
+        ws.send(msg);
+    };
+
+    document.getElementById('messageForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var message = document.getElementById('messageInput').value;
+        window.send(message);
+        document.getElementById('messageInput').value = '';
+    });
+
+    document.getElementById('connectForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        var url = document.getElementById('urlInput').value;
+        try {
+            var connected = await window.connect(url);
+            document.getElementById('connect-state').innerText = connected ? '✅' : "❌";
+        } catch (error) {
+            document.getElementById('connect-state').innerText = "❌";
+        }
+    });
+
+    document.getElementById('urlInput').value = window.location.origin + '/ws';
+</script>
+</body>
+</html>
