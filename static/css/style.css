@@ -22,8 +22,8 @@ body {
 
 .logo {
     animation: flicker 2s infinite;
-    width: 20rem; /* adjust as needed */
-    height: 20rem; /* adjust as needed */
+    width: 10rem; /* adjust as needed */
+    height: 10rem; /* adjust as needed */
 }
 
 .center-text {
