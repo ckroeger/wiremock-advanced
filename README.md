@@ -21,7 +21,7 @@ A example Image for extending a wiremock, with static content, controlled by ngi
 
 ## TODOS
   * ✅ add newman
-  * add enpoint that returns all postman-collection names
+  * ✅ add enpoint that returns all postman-collection names
   * add enpoint that takes name of the postman-collection to execute
 
 

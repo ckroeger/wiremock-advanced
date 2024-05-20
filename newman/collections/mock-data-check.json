@@ -27,6 +27,8 @@
                                     "pm.test(\"The response has all properties\", () => {\r",
 									"    //parse the response json and test three properties\r",
 									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.results).to.be.an('array').that.is.not.empty;\r",
+									"    pm.expect(responseJson.results).to.have.length.greaterThan(5);\r",
 									"    //pm.expect(responseJson.form.type).to.eql('vip');\r",
 									"    //pm.expect(responseJson.form.name).to.be.a('string');\r",
 									"    //pm.expect(responseJson.form.id).to.have.lengthOf(1);\r",
