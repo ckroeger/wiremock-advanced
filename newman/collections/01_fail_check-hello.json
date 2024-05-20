@@ -2,7 +2,7 @@
     "info": {
         "_postman_id": "check_hello_id",
         "name": "Check Hello API",
-        "description": "Collection to check the response of http://localhost/api/hello",
+        "description": "Collection to check the response of http://localhost/api/hello, this tests the Content-Type header is text/xml, this test should fail as the Content-Type is text/plain", 
         "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
@@ -15,7 +15,7 @@
                         "type": "text/javascript",
                         "exec": [
                             "pm.test(\"Content-Type is plain text\", function () {",
-                            "    pm.response.to.have.header(\"Content-Type\", \"text/plain\");",
+                            "    pm.response.to.have.header(\"Content-Type\", \"text/xml\");",
                             "});"
                         ]
                     }

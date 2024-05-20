@@ -64,37 +64,31 @@ app.listen(port, () => {
 
 function runNewmanWith(res, location) {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-    const controller = new AbortController();
-    try {
-        const { signal } = controller;
-        const nm = spawn('newman', ['run', location], { 
-            encoding: 'utf8',
-            signal
-        });
-        nm.stdout.pipe(res);
-        nm.stderr.on('data', (data) => {
-            console.error(`stderr: ${data}`);
-            res.write(`\nError: child process exited with code ${data}\n`);
-            //controller.abort();
-        });
+    const nm = spawn('newman', ['run', location], { encoding: 'utf8' });
 
+    nm.stdout.on('data', (data) => {
+        res.write(data);
+    });
+
+    nm.stdout.on('end', () => {
         nm.on('close', (code) => {
             console.log(`child process exited with code ${code}`);
             if (code === 0) {
-                res.write('\nSuccess: The process completed successfully!\n');
+                res.write('\n✅ Success: Collection run completed successfully!\n');
             } else {
-                res.write(`\nClose: child process exited with code ${code}\n`);
+                res.write(`\n❌ Fail: Collection run failed.\n`);
             }
-            controller.abort();
+            res.end();
         });
+    });
 
-        nm.on('error', (err) => {
-            console.error(`spawn error: ${err}`);
-            res.write(`\nspawn Error: ${err}\n`);
-        });
-    } catch (err) {
-        console.error(`Error running Newman: ${err}`);
-        res.write('Internal Server Error');
-        controller.abort();
-    }
+    nm.stderr.on('data', (data) => {
+        console.error(`stderr: ${data}`);
+        //res.write(`\nError: child process exited with code ${data}\n`);
+    });
+
+    nm.on('error', (err) => {
+        console.error(`spawn error: ${err}`);
+        res.write(`\nspawn Error: ${err}\n`);
+    });
 }
