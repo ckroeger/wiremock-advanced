@@ -1,6 +1,7 @@
 #!/bin/bash
 while true
 do
-    echo "👋 alive"
+    timestamp=$(date)
+    echo "👋 alive - $timestamp"
     sleep 60
 done

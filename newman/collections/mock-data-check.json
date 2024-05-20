@@ -42,7 +42,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/api/geocode/v1/json?q=Halifax",
+							"raw": "http://localhost/api/geocode/v1/json?q=Halifax",
 							"protocol": "http",
 							"host": [
 								"localhost"

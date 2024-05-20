@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Awesome Website</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style>
@@ -36,16 +37,20 @@
     </li>
     <li><h3>Data from Mockserver</h3>
         <ul>
-            <li><a href="http://localhost:8090/api/__admin/mappings" target="_blank">show mappings</a></li>
-            <li><a href="http://localhost:8090/api/v1/getWeather?city=Halifax" target="_blank">api/v1/getWeather?city=Halifax</a></li>
-            <li><a href="http://localhost:8090/api/geocode/v1/json?q=Halifax" target="_blank">/api/geocode/v1/json?q=Halifax</a></li>
-            <li><a href="http://localhost:8090/api/forecast/apikey123/44.648618,-63.5859487?units=uk2" target="_blank">/api/forecast/apikey123/44.648618,-63.5859487?units=uk2</a></li>
+            <li><a href="http://localhost:8090/api/__admin/mappings" target="_blank">[📟 JSON] show mappings</a></li>
+            <li><a href="http://localhost:8090/api/v1/getWeather?city=Halifax" target="_blank">[📟 JSON] api/v1/getWeather?city=Halifax</a></li>
+            <li><a href="http://localhost:8090/api/geocode/v1/json?q=Halifax" target="_blank">[📟 JSON] /api/geocode/v1/json?q=Halifax</a></li>
+            <li><a href="http://localhost:8090/api/forecast/apikey123/44.648618,-63.5859487?units=uk2" target="_blank">[📟 JSON] /api/forecast/apikey123/44.648618,-63.5859487?units=uk2</a></li>
         </ul>
     </li>
     <li><h3>Newman</h3>
         <ul>
-            <li><a href="http://localhost:8090/newman/" target="_blank">executes a test postman collection</a></li>
-            <li><a href="http://localhost:8090/newman/collections" target="_blank">delivers a list of collection-names in colletion folder</a></li>
+            <li><a href="http://localhost:8090/newman/" target="_blank">🏃 executes a test postman collection</a></li>
+            <li><a href="http://localhost:8090/newman/collections" target="_blank">📋 delivers a list of collection-names in colletion folder</a></li>
+            <li><a href="http://localhost:8090/newman/run/01_fail_check-hello.json" target="_blank">[🌍 HTML] a test that fails</a></li>
+            <li><a href="http://localhost:8090/newman/run/01_fail_check-hello.json?asJson=true" target="_blank">[📟 JSON] a test that fails</a></li>
+            <li><a href="http://localhost:8090/newman/run/check-hello.json" target="_blank">[🌍 HTML] a test that complete with no errors</a></li>
+            <li><a href="http://localhost:8090/newman/run/check-hello.json?asJson=true" target="_blank">[📟 JSON] a test that complete with no errors</a></li>
         </ul>
     </li>
 </ul>
