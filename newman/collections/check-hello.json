@@ -1,0 +1,43 @@
+{
+    "info": {
+        "_postman_id": "check_hello_id",
+        "name": "Check Hello API",
+        "description": "Collection to check the response of http://localhost:8090/api/hello",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Check Content-Type",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "type": "text/javascript",
+                        "exec": [
+                            "pm.test(\"Content-Type is plain text\", function () {",
+                            "    pm.response.to.have.header(\"Content-Type\", \"text/plain\");",
+                            "});"
+                        ]
+                    }
+                }
+            ],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8090/api/hello",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8090",
+                    "path": [
+                        "api",
+                        "hello"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}

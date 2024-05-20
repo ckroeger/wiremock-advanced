@@ -31,14 +31,21 @@
     <li><h3>Static content via webserver</h3>
         <ul>
             <li><a href="/index.html">reload this side</a></li>
+            <li><a href="http://localhost:8090/ws.html" target="_blank">Websocket</a></li>
         </ul>
     </li>
     <li><h3>Data from Mockserver</h3>
         <ul>
-            <li><a href="http://localhost:8090/ws.html" target="_blank">Websocket</a></li>
+            <li><a href="http://localhost:8090/api/__admin/mappings" target="_blank">show mappings</a></li>
             <li><a href="http://localhost:8090/api/v1/getWeather?city=Halifax" target="_blank">api/v1/getWeather?city=Halifax</a></li>
             <li><a href="http://localhost:8090/api/geocode/v1/json?q=Halifax" target="_blank">/api/geocode/v1/json?q=Halifax</a></li>
             <li><a href="http://localhost:8090/api/forecast/apikey123/44.648618,-63.5859487?units=uk2" target="_blank">/api/forecast/apikey123/44.648618,-63.5859487?units=uk2</a></li>
+        </ul>
+    </li>
+    <li><h3>Newman</h3>
+        <ul>
+            <li><a href="http://localhost:8090/newman/" target="_blank">executes a test postman collection</a></li>
+            <li><a href="http://localhost:8090/newman/collections" target="_blank">delivers a list of collection-names in colletion folder</a></li>
         </ul>
     </li>
 </ul>
