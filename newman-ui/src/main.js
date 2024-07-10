@@ -2,18 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import $ from 'jquery'
 import 'bootstrap'
 
-const createCollectionsOutputOld = (data) => {
-    const collectionsDiv = document.getElementById('collections');
-    collectionsDiv.innerHTML = ''; // Clear the div
-
-    data.forEach(item => {
-        const a = document.createElement('a');
-        a.href = "http://localhost:3000/run/"+item; // Assuming the item has a url property
-        a.textContent = item; // Assuming the item has a name property
-        collectionsDiv.appendChild(a);
-    });
-}
-
 const createCollectionsOutput = (data) => {
     const collectionsDiv = document.getElementById('collections');
     collectionsDiv.innerHTML = ''; // Clear the div
@@ -42,16 +30,17 @@ const createCollectionsOutput = (data) => {
     // Append the ul element to the collectionsDiv
     collectionsDiv.appendChild(ul);
 }
+
+function loadCollections() {
+    fetch('http://localhost:3000/collections')
+        .then(response => response.json())
+        .then(data => {
+            createCollectionsOutput(data)
+        })
+        .catch(error => console.error('Error:', error));
+}
+
 $(document).ready(function () {
-    $('#clickMe').on('click', function () {
-        alert('HI! You\'ve clicked me!')
-    })
-    $('#load-collections').on('click', function () {
-        fetch('http://localhost:3000/collections')
-            .then(response => response.json())
-            .then(data => {
-                createCollectionsOutput(data)
-            })
-            .catch(error => console.error('Error:', error));
-    });
+    $('#load-collections').on('click', loadCollections);
+    loadCollections();
 })
