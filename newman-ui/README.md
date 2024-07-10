@@ -13,8 +13,8 @@ npm run dev
 
     
 ## TODOS
-* a webapp that list all postman-collections
-* execute a selected postman-collection and display output
+* ✅ a webapp that list all postman-collections
+* ✅ execute a selected postman-collection and display output
 * execute a selected postman-collection and displays specific data 
   * displays a collabsable list
     * uncollabsed - name of collection, execution-time, number-of-test
