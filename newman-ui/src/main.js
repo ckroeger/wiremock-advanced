@@ -2,6 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import $ from 'jquery'
 import 'bootstrap'
 
+// if the location contains newman-ui the host is /newman otherwise it is http://localhost:3000
+const newmanHost = location.pathname.includes('newman-ui') ? "/newman" : "http://localhost:3000";
+//const newmanHost = "http://localhost:3000";
+
 const createCollectionsOutput = (data) => {
     const collectionsDiv = document.getElementById('collections');
     // if collectionsDiv contauins ul element set timeout to 2100ms
@@ -18,7 +22,7 @@ const createCollectionsOutput = (data) => {
 
             // Create a new a element
             const a = document.createElement('a');
-            a.href = "http://localhost:3000/run/"+item;
+            a.href = newmanHost + "/run/"+item;
             a.textContent = item;
             // Append the a element to the li element
             li.appendChild(a);
