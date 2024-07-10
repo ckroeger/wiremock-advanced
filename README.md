@@ -24,6 +24,7 @@ A example Image for extending a wiremock, with static content, controlled by ngi
   * ✅ add enpoint that returns all postman-collection names
   * ✅ add enpoint that takes name of the postman-collection to execute
   * ✅ [🕵️‍♂️ Newman Manager](newman-ui/README.md) - still in progress
+  * add Newman Manager to image
   * 🔌👨‍💼 Wiremock-Manager
     * Dashboard-Page
       * is wiremock up
