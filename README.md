@@ -23,30 +23,17 @@ A example Image for extending a wiremock, with static content, controlled by ngi
   * ✅ add newman
   * ✅ add enpoint that returns all postman-collection names
   * ✅ add enpoint that takes name of the postman-collection to execute
-  * 🕵️‍♂️ Newman Manager
-    * a webapp that list all postman-collections
-    * execute a selected postman-collection and display output
-    * execute a selected postman-collection and displays specific data 
-      * displays a collabsable list
-        * uncollabsed - name of collection, execution-time, number-of-test
-        * the row is 
-          * red if all test fail
-          * orange if at least one fail
-          * green if none fail
-        * collabsed
-          * add details for each test
-            * name, error (if exists), execution-time
-            * red if fail, green when successful
-      * add a new collection
-    * 🔌👨‍💼 Wiremock-Manager
-      * Dashboard-Page
-        * is wiremock up
-        * number of mappings
-        * number of journal-entries
-      * Mappings-Manager
-        * list all stored mappings
-        * add a new mapping (as text)
-        * add a new mapping - postman-editor style
+  * ✅ [🕵️‍♂️ Newman Manager](newman-ui/README.md) - still in progress
+  * ✅ add Newman Manager to image
+  * 🔌👨‍💼 Wiremock-Manager
+    * Dashboard-Page
+      * is wiremock up
+      * number of mappings
+      * number of journal-entries
+    * Mappings-Manager
+      * list all stored mappings
+      * add a new mapping (as text)
+      * add a new mapping - postman-editor style
 
 
 ## How to create the image

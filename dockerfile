@@ -32,6 +32,10 @@ COPY wiremock/wiremock.sh /home/wiremock/wiremock.sh
 COPY newman /home/newman
 RUN cd /home/newman && npm install
 
+# Copy newman
+COPY newman-ui /home/newman-ui
+RUN cd /home/newman-ui && npm install && npm run build && cp -r dist /usr/share/nginx/html/newman-ui
+
 # Make the scripts executable
 RUN chmod +x \
     /log-script.sh \

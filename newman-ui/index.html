@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🕵️‍♂️ Newman UI</title>
+</head>
+<body>
+<style>
+@keyframes blurAndFade {
+    0% { filter: blur(5px); opacity: 1; }
+    50% { filter: blur(5px); opacity: 0; }
+}
+
+.blur-effect {
+    animation: blurAndFade 2s forwards;
+}
+</style>
+<div class="container">
+    <h1 class="mt-5">Welcome to 🕵️‍♂️ Newman UI</h1>
+    <button id="load-collections" class="btn btn-primary mt-3">🔃 reload collections</button>
+    <div id="collections"></div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
