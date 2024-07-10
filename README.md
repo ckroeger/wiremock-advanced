@@ -58,7 +58,9 @@ docker run -p 8090:80 -p 3000:3000 -p 4000:4000 wm-adv:v1
 ```shell
 curl http://localhost:8090
 ```
-or http://localhost:8090/
+or [http://localhost:8090/](http://localhost:8090/) (Root-Site for static-content)
+
+![Root-Site for static-content](docs/indexhtml.png)
 
 ### Show wiremock mappings
 ```shell
