@@ -1,6 +1,10 @@
 #  🕵️‍♂️ newman-ui
 A simple webapp that uses newman to execute postman-collections.
 
+![newman-ui.png](docs/newman-ui.png)
+
+![exec-collection.png](docs/exec-collection.png)
+
 ## How to build
 ```bash
 npm run build
