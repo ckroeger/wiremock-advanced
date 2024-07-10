@@ -5,7 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 const port = 3000;
-//const colPath = '/home/newman/collections';
+
 const rootPath = './';
 const colPath = rootPath + 'collections';
 
