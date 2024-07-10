@@ -7,9 +7,13 @@
 </head>
 <body>
 <style>
+@keyframes blurAndFade {
+    0% { filter: blur(5px); opacity: 1; }
+    50% { filter: blur(5px); opacity: 0; }
+}
+
 .blur-effect {
-filter: blur(5px);
-transition: filter 0.5s ease-in-out;
+    animation: blurAndFade 2s forwards;
 }
 </style>
 <div class="container">
