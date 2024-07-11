@@ -32,7 +32,7 @@ COPY wiremock/wiremock.sh /home/wiremock/wiremock.sh
 COPY newman /home/newman
 RUN cd /home/newman && npm install
 
-# Copy newman
+# Copy newman-ui
 COPY newman-ui /home/newman-ui
 RUN cd /home/newman-ui && npm install && npm run build && cp -r dist /usr/share/nginx/html/newman-ui
 
